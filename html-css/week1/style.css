@@ -1,0 +1,53 @@
+body {
+    background-image: url(https://raw.githubusercontent.com/mhtarokh/hyf-homework/master/html-css/week1/dark.jpg);
+    background-size: 1000px;
+    background-repeat: repeat-y;
+    width: 1000px;
+    margin: auto;
+    background-position: center;
+}
+
+#title {
+    width: 1000px;
+    margin: 150px 0px 50px 0px;
+    text-align: center;
+    color: yellow;
+    background: rgb(4, 24, 61);
+}
+
+#my_picture {
+    margin-top: 100px;
+    text-align: center;
+}
+
+#contact_info {
+    margin-top: 50px;
+    background: none;
+    color: yellow;
+    font-style: italic;
+    text-align: center;
+    line-height: 50px;
+}
+
+#about_me {
+    margin-top: 50px;
+    margin: auto;
+    width: 500px;
+    color:yellow;
+    text-align: center;
+}
+
+
+.my_list {
+    margin: 50px 260px 0px 260px;
+    background: none;
+    color: yellow;
+    font-style: italic;
+    line-height: 25px;
+    float: auto;
+}
+
+.my_list h1 {
+    text-align: center;
+}
+
