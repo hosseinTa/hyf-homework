@@ -8,20 +8,30 @@ body {
 }
 
 #title {
-    width: 1000px;
-    margin: 150px 0px 50px 0px;
+    width: 30%;
+    margin: 15% 35% 5% 35%;
     text-align: center;
     color: yellow;
-    background: rgb(4, 24, 61);
+}
+
+#name {
+    animation-name: shshsh;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    position: relative;
+    left: -1px;
+}
+
+a {
+    color: white;
 }
 
 #my_picture {
-    margin-top: 100px;
-    text-align: center;
+    margin: 10% 40% 0% 40%;
 }
 
 #contact_info {
-    margin-top: 50px;
+    margin-top: 5%;
     background: none;
     color: yellow;
     font-style: italic;
@@ -30,16 +40,15 @@ body {
 }
 
 #about_me {
-    margin-top: 50px;
-    margin: auto;
-    width: 500px;
+    margin: 5% 25% 5% 25%;
+    width: 50%;
     color:yellow;
     text-align: center;
 }
 
 
 .my_list {
-    margin: 50px 260px 0px 260px;
+    margin: 5% 25% 5% 25%;
     background: none;
     color: yellow;
     font-style: italic;
@@ -51,3 +60,65 @@ body {
     text-align: center;
 }
 
+#am2 {
+    animation-name: test;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position: relative;
+    top: -60px;
+}
+
+#am3 {
+    animation-name: test2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    position: relative;
+    top: -120px;
+}
+
+@keyframes test {
+    0%  {left: 2px}
+    20% {left: 4px}
+    40% {left: 0px}
+    60% {left: -2px}
+    80% {left:-4px}
+    90% {left:-2px}
+    100%{left: 0px}
+}
+
+@keyframes test2 {
+    0%  {top: -118px}
+    10% {top: -120px}
+    20% {top: -122px}
+    30% {top: -120px}
+    40% {top: -118px}
+    50% {top: -116px}
+    60% {top: -114px}
+    70% {top: -116px}
+    80% {top: -118px}
+    90% {top: -120px}
+    100%{top: -120px}
+}
+
+@keyframes shshsh {
+    0%  {left: 0px}
+    9%  {left: 0px}
+    10% {left:-10px}
+    11% {left: 0px}
+    35% {left: 0px}
+    36% {left: 5px}
+    37% {left: 0px}
+    50% {left: 0px}
+    51% {left:-10px}
+    52% {left: 0px}
+    60% {top: 0px}
+    61% {top: -5px}
+    62% {top: 0px}
+    70% {left: 0px}
+    71% {left: 5px}
+    72% {left: 0px}
+    80% {top: 0px}
+    81% {top: 5px}
+    82% {top: 0px}
+    100%{left: 0px}
+}
