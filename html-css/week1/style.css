@@ -30,8 +30,8 @@ a {
 }
 
 #my_picture {
-    width: 200px;
-    height: 200px;
+    width: 20%;
+    height: 20%;
     margin: 10% 40% 0% 40%;
     border-radius: 25px;
     overflow: hidden;
