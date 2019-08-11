@@ -1,9 +1,8 @@
 body {
     background-image: url(https://raw.githubusercontent.com/mhtarokh/hyf-homework/master/html-css/week1/dark.jpg);
     background-size: 1000px;
-    background-repeat: repeat-x;
-    width: 1000px;
-    height: 1000px;
+    background-repeat: repeat;
+    width: 100%;
     margin: auto;
     background-position: center;
     background-position-x: center;
