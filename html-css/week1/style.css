@@ -1,6 +1,12 @@
 body {
     background-image: url(https://raw.githubusercontent.com/mhtarokh/hyf-homework/master/html-css/week1/dark2.jpg);
-
+    background-size: 1000px;
+    background-repeat: repeat-y;
+    width: 1000px;
+    margin: auto;
+    background-position: center;
+    background-position-x: center;
+    float: unset;
 }
 
 #title {
