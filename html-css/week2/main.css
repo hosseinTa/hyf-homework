@@ -40,7 +40,7 @@ li {
 
 #menu ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -85,6 +85,7 @@ li {
 
 #menu_text {
     width: 100%;
+    display: flex;
 }
 
 #top-img {
@@ -149,6 +150,10 @@ li {
 @media screen and (min-width: 800px) {
     ul{
         width: 400px;
+    }
+
+    #menu ul {
+        flex-direction: row;
     }
 
     #top {
