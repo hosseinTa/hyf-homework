@@ -1,0 +1,111 @@
+* {
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header div {
+    border: 1px black solid;
+    background: gray;
+}
+
+input {
+    margin: 5% 5% 5% 5%;
+}
+
+input[type=checkbox] {
+    transform: scale(3);
+    padding: 10px;
+}
+
+#logo {
+    width : 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigation {
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro {
+    width: 80%;
+}
+
+#progress_bar {
+    list-style: none;
+    display: flex;
+}
+
+#done {
+    height: 40px;
+    width: 10%;
+    background: gray;
+    border: 1px black solid;
+    border-right: 0;
+}
+
+#not_done {
+    height: 40px;
+    width: 80%;
+    border: 1px black solid;
+    border-left: 0;
+}
+
+
+
+#text_profile {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-between
+}
+
+#text_profile ul {
+    width: 150px;
+    list-style: none;
+}
+
+#text_profile ul li:nth-of-type(2){
+    font-size: 10px;
+    margin-top: 10px;
+    width: 130px;
+}
+
+#profile {
+    margin-top: 0;
+    width: 300px;
+    height: 100px;
+}
+
+#ship_address:checked ~ * .taggle {
+    display: none;
+}
+
+#ship_address {
+    position: relative;
+    top: 320px;
+    left: 100px;    
+}
+
+
+#next_step {
+    position: relative;
+    margin-right: 150px;
+    float: right;
+    transform: scale(4)
+}
+
+#billing_address {
+    
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main4.css">
+</head>
+<body>
+    <header>
+        <div id='logo'><p>Logo</p></div>
+        <div id='navigation'><p>Navigation</p></div>
+    </header>
+
+
+    <div id = 'intro'>
+        <h1>Signup to your Costumertailor.com</h1>
+        <h1>Step 4/4 - Payment</h1>
+        <p><strong>Progress</strong></p>
+        <div id='progress_bar'>
+            <!-- <li><div id='done'></div></li>
+            <li><div id='not_done'></div></li> -->
+            <div id='done'> </div>
+            <div id='not_done'> </div>
+        </div>
+    </div>
+
+    <p>Please fill in your payment data</p>
+    <form action="index1.html" autocomplete>
+        
+        <label for="card_name">Name on Card*</label>
+        <input type="text" name="card_name" id='card_name' autofocus> <br>
+
+        <label for="card_type">Card type*</label>
+        <select name="card_type" id="card_type" required> <br>
+                <option value="Visa">Visa</option>
+                <option value="dankort">Dankort</option>
+                <option value="master">Master</option>
+        </select> <br>
+
+        <label for="card_number">Credit card number*</label>
+        <input type="text" name="card_number" id='card_number' autofocus> <br>
+
+        <label for="first_name">First name</label>
+        <input type="text" name="first_name" id='first_name' autofocus> <br>
+
+        <label for="expire_month">Expire month</label>
+        <input type="text" name="expire_month" id='expire_month' autofocus>
+
+        <label for="expire_year">Expire year</label>
+        <input type="text" name="expire_year" id='expire_year' autofocus> <br>
+
+        <label for="cvv">CVV</label>
+        <input type="text" name="cvv" id='cvv' autofocus> <br>
+
+        <input id='next_step' type="submit" value="Next Step">
+
+    </form>
+</body>
+</html>

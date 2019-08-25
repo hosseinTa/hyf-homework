@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div id='logo'><p>Logo</p></div>
+        <div id='navigation'><p>Navigation</p></div>
+    </header>
+    <div id = 'intro'>
+        <h1>Signup to your Costumertailor.com</h1>
+        <p>We can Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque ipsam porro molestiae minima magnam. Repellendus impedit quaerat voluptates praesentium a
+            nimi.</p>
+        <p>Sign up bellow Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio aperiam cupiditate qui numquam natus. Animi unde error veniam ad adipisci officia commodi quae quibusdam, vero repellat possimus beatae! Quibusdam,
+             aliquam.</p>
+        <h1>Step 1/4 - Tell us who you are?</h1>
+        <p><strong>Progress</strong></p>
+        <div id='progress_bar'>
+            <!-- <li><div id='done'></div></li>
+            <li><div id='not_done'></div></li> -->
+            <div id='done'> </div>
+            <div id='not_done'> </div>
+        </div>
+    </div>
+    <p>Nice to meet you.ipisicing elit. At perspiciatis assumenda adipisci placeat 
+        totam quibusdam.</p>
+    <form action="index2.html" autocomplete>
+        <label for="first_name">First Name*</label>
+        <input type="text" name="first_name" id='first_name' required autofocus>
+
+        <label for="last_name">Last Name*</label>
+        <input type="text" name="last_name" id='last_name' required> <br>
+
+        <label for="country">Country*</label>
+        <select name="country" id="country" required>
+                <option value="denkmark">Denmark</option>
+                <option value="sweeden">Sweeden</option>
+                <option value="norway">Norway</option>
+        </select> <br>
+
+        <label for="street_address">Street Address*</label>
+        <input type="text" name="street_address" id='street_address' required>
+
+        <label for="post_code">Post Code*</label>
+        <input type="text" name="post_code" id='post_code' required> <br>
+
+        <input type='checkbox' name="ship_address" id='ship_address' checked> <br>
+
+        <div id=billing_address class='taggle'>
+            <label class='taggle' for="country_billing">Country*</label>
+            <select name="country_billing" id="country_billing" class='taggle'>
+                    <option value="denkmark">Denmark</option>
+                    <option value="sweeden">Sweeden</option>
+                    <option value="norway">Norway</option>
+            </select> <br>
+    
+            <label for="street_address_billing" class='taggle'>Street Address*</label>
+            <input type="text" name="street_address_billing" id='street_address_billing' class='taggle'>    
+            <label for="post_code_billing" class='taggle'>Post Code*</label>
+            <input type="text" name="post_code_billing" id='post_code_billing' class='taggle'> <br>
+        </div>
+
+        <div id='text_profile'>
+            <label for="profile">
+                <ul>
+                    <li>
+                            Profile Description
+                    </li>
+                    <li>
+                        please provide Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt cumque in non.
+                    </li>
+                </ul>
+            </label>
+            <input type="text" name="profile" id='profile' width: 300px; > <br>
+        </div>
+        <p>use the same address for Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, vitae shipping address.</p>
+
+        <label for="ship_address">Shipping Address</label>
+        <!-- <input type='checkbox' name="ship_address" id='ship_address' checked> <br> -->
+
+        <input id='next_step' type="submit" value="Next Step">
+
+    </form>
+</body>
+</html>
