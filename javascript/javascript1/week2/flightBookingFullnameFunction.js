@@ -6,11 +6,10 @@ function getFullname( firstName , sureName , useFormalName) {
             return`${firstName} ${sureName}`;
         }
     } else if( firstName ) {
-        console.log(`Sure name is missing.`);
+        return(`Sure name box is empty.`);
     } else if( sureName ) {
-        console.log(`First name is missing.`);
+        return(`First name box is empty.`);
     } else {
-        console.log(`First name and sure name is missing.`);
+        return(`First name and sure name box is empty.`);
     }
 }
-console.log(getFullname( 'Hossein', '', false));
