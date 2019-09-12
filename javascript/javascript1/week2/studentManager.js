@@ -1,114 +1,65 @@
 const class07Students = [];
 function addStudentToClass(studentName) {
-    if (typeof(studentName) == 'string') {
-        
-        //it is at least an string variable
-        if(studentName == 'Queen' || studentName == 'queen') {
-            
-            //Queen must be registered, no matter what
-            if( isNewStudent( 'queen' ) && isNewStudent( 'Queen' ) ) {
-                
-                // check if queen is already registered
-                //queen is new to class
-                console.log( pushStudent(studentName) );
-                return;
-
-            } else {
-                
-                //Queen is registered before.
-                console.log( `Student ${studentName} is already in the class` );
-                return;
-
-            }
-
-        } else if ( studentName.length == 0) {
-            
-            //It is empty
+    if (typeof(studentName) === 'string') {
+        if(studentName.toLowerCase() === 'queen') {
+            console.log( pushStudent(studentName) );
+            return;
+        }
+        if ( studentName.length === 0) {
             console.log('Student name is empty.');
             return
-
         } else {
-
-            //It is not queen and name is not empty
-            if(isNewStudent( studentName ) ) {
-                
-                //It is an ordinary new student then
-                if ( getNumberOfStudents(class07Students) < 6) {
-                    
-                    //there is an empty slot in the class.
-                    console.log(pushStudent(studentName));
-                    return;
-
-                } else {
-                    
-                    //class full
-                    console.log(`Sorry, Class is full. We can not register ${studentName} in the class.`);
-                    return;
-                    
-                }
-
+            if ( getNumberOfStudents(class07Students) < 6) {  
+                console.log(pushStudent(studentName));
+                return;
             } else {
-                
-                //this student is already registered
-                console.log( `Student ${studentName} is already in the class` );
-
+                console.log(`Sorry, Class is full.`);
+                return;
             }
-
         }
-
     } else {
-        
-        //invalid name format
         console.log('Student name should be a string.');
         return;
-
     }
-    
-
 }
 
 function getNumberOfStudents() {
-    // You write code here
     return class07Students.length;
 }
 
 function pushStudent( studentName ) {
-    class07Students.push( studentName );
-    console.log(class07Students);
-    return `Student ${studentName} added to class`;
-}
+    const desiredFormatOfStudentName = desiredFormat(studentName);
+    if( !class07Students.includes( desiredFormatOfStudentName  )) {
+        class07Students.push( desiredFormatOfStudentName  ) ;
 
-function isNewStudent(studentName) {
-    for (var i = 0 ; i < class07Students.length ; i++) {
-        if( studentName == class07Students[i]) {
-            return false;
-        }
+        return `Student ${studentName} added to class`;
+    } else {
+        return `Student ${studentName} is already in the class` ;
     }
-    return true;
 }
 
+function desiredFormat(studentName) {
+    return studentName.charAt(0).toUpperCase() + studentName.slice(1);
+}
+
+addStudentToClass('');
 addStudentToClass(5);
-addStudentToClass('jack');
 addStudentToClass('jack');
 addStudentToClass('jack2');
 addStudentToClass(5);
 addStudentToClass('jack3');
 addStudentToClass('jack4');
-addStudentToClass('');
+addStudentToClass('queen');
 addStudentToClass('jack5');
 addStudentToClass('jack5');
-addStudentToClass('jack6');
 addStudentToClass('jack6');
 addStudentToClass('');
 addStudentToClass('robert1');
-addStudentToClass('robert2');
-addStudentToClass('robert3');
 addStudentToClass('Queen');
 addStudentToClass('Queen');
 addStudentToClass('');
 addStudentToClass('jack7');
 addStudentToClass(5);
 addStudentToClass('queen');
-addStudentToClass('Queen');
 addStudentToClass('jack2');
-
+console.log(class07Students);
