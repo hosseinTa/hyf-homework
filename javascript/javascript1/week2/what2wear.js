@@ -7,7 +7,7 @@ function what2Wear(temperature) {
                     'short and T-shirt' ,
                     'just short' ,
                     'NOTHING' ];
-    if(typeof(temperature) == 'number') {
+    if(typeof(temperature) === 'number') {
         if (temperature < -5 ) {
             decision = 0 ;
         } else if (temperature <= 0 ) {
@@ -29,3 +29,5 @@ function what2Wear(temperature) {
     }
     
 }
+
+console.log(what2Wear(17))
