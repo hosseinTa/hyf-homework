@@ -46,11 +46,16 @@ const songDatabase = [{
   },
   {
     songId: 10,
+    title: 'Bad Guy',
+    artist: 'Eilish Billie ',
+  },
+  {
+    songId: 11,
     title: 'Talk',
     artist: 'Khalid',
   },
   {
-    songId: 11,
+    songId: 12,
     title: 'I Don\'t Care',
     artist: 'Ed Sheeran & Justin Bieber',
   }
@@ -61,37 +66,52 @@ function addSongToDatabase( song ) {
     return songDatabase.push(song);
 }
 
-function getSongByTitle( songtitle ) {
-    for(let i = 0; i < songDatabase.length ; i++){
-        if(songDatabase[i].title === songtitle) {
-            return songDatabase[i];
-        }
-    }
-    // return {songId: '', title: '',artist: ''}
-}
-
-function addSongToMyPlaylist(title) {
-    myPlaylist.push(getSongByTitle(title));
-}
-
-addSongToDatabase({
-    songId: '',
-    title: 'title_X',
-    artist: 'artist_X',
-  });
+addSongToDatabase({ songId: '', title: 'title_X', artist: 'artist_X' });
 console.log (songDatabase);
 
-const myPlaylist = [];
+function getSongByTitle( songtitle ) {
+    let songMach = [];
+    for(let i = 0; i < songDatabase.length ; i++){
+        if(songDatabase[i].title === songtitle) {
+            songMach.push(songDatabase[i]);
+        }
+    }
+    // console.log('songMach');    
+    // console.log(songMach); 
+    return songMach
+}
+
 console.log('\ngetSongByTitle(\'Town\')');
 console.log(getSongByTitle('Town'));
+
+console.log('\ngetSongByTitle(\'I Don\'t Care\')');
+console.log(getSongByTitle('I Don\'t Care'));
+
 
 console.log('\ngetSongByTitle(\'Bad Guy\')');
 console.log(getSongByTitle('Bad Guy'));
 
-addSongToMyPlaylist('Circles');
-console.log('\nmyPlaylist'); 
-console.log(myPlaylist); 
 
+
+
+
+
+function addSongToMyPlaylist(title) {
+    const finding = getSongByTitle ( title ) ;
+    for (let i = 0 ; i < finding.length ; i++) {
+        myPlaylist.push(finding[i]);   
+    }
+}
+const myPlaylist = [];
+// const myPlaylist = [ {songId: 1, title: 'Truth Hurts', artist: 'Lizzo'}];
+console.log('\nmyPlaylist_Circles'); 
+addSongToMyPlaylist('Circles');
+console.log(myPlaylist);
+
+console.log('\nmyPlaylist_Talk'); 
 addSongToMyPlaylist('Talk');
-console.log('\nmyPlaylist'); 
-console.log(myPlaylist); 
+console.log(myPlaylist);
+
+console.log('\nBad Guy'); 
+addSongToMyPlaylist('Bad Guy');
+console.log(myPlaylist);
