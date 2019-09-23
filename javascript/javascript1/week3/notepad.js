@@ -1,7 +1,8 @@
 let notes = [];
 
 function addNote( content , id ){
-    notes.push( {"content" : content , "id" : id} )
+    // notes.push( {"content" : content , "id" : id} );
+    notes.push( {content , id} )
 }
 
 addNote('this is the first note.' , 235 )

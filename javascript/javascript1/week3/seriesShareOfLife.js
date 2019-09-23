@@ -29,8 +29,8 @@ const seriesDurations = [
 ]
 let total = 0;
 for (let i= 0; i < seriesDurations.length ; i++) {
-    seriesLength = seriesLengthCalculator(seriesDurations[i]);
-    seriesPercent =  seriesLength / lifeMinutes;
+    seriesLength  = seriesLengthCalculator(seriesDurations[i]);
+    seriesPercent = seriesLength / lifeMinutes;
     seriesPercent = 100 * seriesPercent.toFixed(5)
     console.log(`${seriesDurations[i]['title']} took ${seriesPercent}% of my life`)
     total += seriesPercent;
