@@ -43,7 +43,7 @@ function getReply(command) {
     if(splitCommand[0] === 'what' ) {
         if (splitCommand[1] === 'day') {
             if (splitCommand[splitCommand.length - 1 ].includes( 'today' )) {
-                reply += `Today is ${ week [ systemDate.getDay() ] }.`
+                return `Today is ${ week [ systemDate.getDay() ] }.`
             }
             if (splitCommand[splitCommand.length - 1].includes ('tomorrow')) {
                 return `Tomorrow is ${ week[ 1 + systemDate.getDay() ] }.`
@@ -129,6 +129,13 @@ console.log(getReply('add clean machine to my todo list.'));
 
 console.log(getReply('add potato to my shopping list.'));
 // console.log(dataBase);
+
+console.log(getReply('what day is today?'));
+// console.log(dataBase);
+
+console.log(getReply('what day is tomorrow?'));
+// console.log(dataBase);
+
 
 console.log(getReply('what is My name?'));
 // console.log(dataBase);
