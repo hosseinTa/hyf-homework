@@ -4,7 +4,6 @@ function commandCleanUp(command) {
     }
     command = command.toLowerCase();
     splitCommand = command.split( " " );
-    console.log(splitCommand);
     return splitCommand;
 }
 
@@ -13,7 +12,6 @@ function add( addtype , item) {
 }
 
 function firstLetterUpperCase(userName) {
-    console.log(userName) , splitCommand;
     return userName.slice(0 , 1).toUpperCase() + userName.slice(1 , userName.length);
 }
 
@@ -43,7 +41,7 @@ function getReply(command) {
 
     // Questions. Sentences that start with WHAT
     if(splitCommand[0] === 'what' ) {
-        if (splitCommand[1] = 'day') {
+        if (splitCommand[1] === 'day') {
             if (splitCommand[splitCommand.length - 1 ].includes( 'today' )) {
                 reply += `Today is ${ week [ systemDate.getDay() ] }.`
             }
@@ -52,11 +50,12 @@ function getReply(command) {
             }
         }
         if( isAboutUser( splitCommand ) ) {
-            const userNameIndex = findIndexOf( 'userName' );
-            if(userNameIndex === -1) {
-                return `I dont know your name. Maybe you should tell me your name.`
+            const lookupValue = splitCommand.slice( splitCommand.indexOf('my') + 1 , splitCommand.length).join(' ') ;
+            const valueIndex = findIndexOf( lookupValue );
+            if(valueIndex === -1) {
+                return `I dont know your ${lookupValue}. Maybe you should give me some information about your ${lookupValue}.`
             } else {
-                return `Your name is ${dataBase[userNameIndex]['value']}`
+                return `Your ${lookupValue} is ${dataBase[valueIndex]['value']}`
             }
         }
     }
@@ -104,36 +103,56 @@ function getReply(command) {
     let newValue = '';
     if (isIndex < myIndex) {
         // THE VALUE IS MY ID
+        // ex: red is my favorite color 
         newId = splitCommand.slice( myIndex + 1 , splitCommand.length ).join(' ');
         newValue = splitCommand.slice(0 , isIndex).join(' ');
     } else {
-        // MY ID IS VALUE
+        // MY ID IS THE VALUE
+        // ex: my favorite color is red
         newId = splitCommand.slice( myIndex + 1 , isIndex ).join(' ');
         newValue = splitCommand.slice( isIndex + 1 , splitCommand.length).join(' ');
     }
-    add( newId , newValue );  
-    return `${newValue} is added to database as your ${newId}.`
+    if ( findIndexOf(newId) !== -1 ) {
+        // Say it is already registered
+        return `Your ${newId} is already registered in database as ${dataBase[findIndexOf(newId)].value}.`
+    } else {
+        // add it to databaee
+        add( newId , newValue );  
+        return `${newValue} is added to database as your ${newId}.`
+    }
 }
 
 let dataBase = [];
 
 console.log(getReply('add clean machine to my todo list.'));
-console.log(dataBase);
+// console.log(dataBase);
 
 console.log(getReply('add potato to my shopping list.'));
-console.log(dataBase);
-
-console.log(getReply('joHn Doe is My name.'));
-console.log(dataBase);
-
-console.log(getReply('Hi, My name is joHn Doe.'));
-console.log(dataBase);
-
-console.log(getReply('Hi, My name is Rober.'));
-console.log(dataBase);
-
-console.log(getReply('Hi, My name is joHn Doe.'));
-console.log(dataBase);
+// console.log(dataBase);
 
 console.log(getReply('what is My name?'));
-console.log(dataBase);
+// console.log(dataBase);
+
+console.log(getReply('My mothers name is julia'));
+// console.log(dataBase);
+
+console.log(getReply('joHn Doe is My name.'));
+// console.log(dataBase);
+
+console.log(getReply('spagetti is My favorite dish.'));
+// console.log(dataBase);
+
+console.log(getReply('My favorite dish is spagetti with fish and pepper.'));
+// console.log(dataBase);
+
+console.log(getReply('My second favorite dish is spagetti with fish and pepper.'));
+// console.log(dataBase);
+
+console.log(getReply('Hi, My name is Rober.'));
+// console.log(dataBase);
+
+console.log(getReply('what is My name?'));
+// console.log(dataBase);
+
+console.log(getReply('what is My mothers name?'));
+// console.log(dataBase);
