@@ -13,6 +13,7 @@ function add( addtype , item) {
 }
 
 function firstLetterUpperCase(userName) {
+    console.log(userName) , splitCommand;
     return userName.slice(0 , 1).toUpperCase() + userName.slice(1 , userName.length);
 }
 
@@ -97,52 +98,31 @@ function getReply(command) {
     }
 
     // Informative sentences
-    if ( isAboutUserName( splitCommand ) ) {
-        let reply = '';
-        let userName = splitCommand[splitCommand.indexOf('name') + 2]
-        userName = firstLetterUpperCase (userName);
-        
-        reply += `Hi ${userName}.`
-            if(splitCommand[0].includes( 'hello' ) || splitCommand[0].includes( 'hi' )) {
-        }
-        // Check if userName is already in there.
-        // let exist = false;
-        // for(let i = 0 ; i < dataBase.length ; i++ ) {
-        //     if ( dataBase[i].id === 'userName') {
-        //         exist = true;
-        //         if (dataBase[i].value === userName) {
-        //             reply += ' Ofcourse I already know your name.'
-        //             break
-        //         } else {
-        //             reply = `It is wierd, I am confused. You prevoiusly have told me that your name is ${dataBase[i].value}`
-        //             break
-        //         }
-        //     }
-        // }
-
-        let exist = false;
-        const userNameIndex = findIndexOf('userName');
-        if(userNameIndex !== -1 ) {
-            exist = true;
-            if (dataBase[userNameIndex].value === userName) {
-                reply += ' Ofcourse I already know your name.'
-            } else {
-                reply = `It is wierd, I am confused. You prevoiusly have told me that your name is ${dataBase[userNameIndex].value}`
-            }
-        }
-        if (!exist) {
-            add( 'userName' , userName )
-            console.log(reply);
-            
-            reply += ` Nice to meet you ${userName}`
-        }
-        return reply;
+    const isIndex = splitCommand.indexOf('is');
+    const myIndex = splitCommand.indexOf('my');
+    if (isIndex < myIndex) {
+        // THE VALUE IS MY ID
+        console.log('****new method****');
+        add(splitCommand.slice( myIndex + 1 , splitCommand.length ).join(' ') , splitCommand.slice(0 , isIndex).join(' ') ) ;
+        console.log(dataBase);
+        console.log('****end new method****');
+        return `your ${splitCommand.slice( myIndex + 1 , splitCommand.length ).join(' ')} is added to database.`
+    } else {
+        // MY ID IS VALUE
+        console.log('****new method2****');
+        add(splitCommand.slice( myIndex + 1 , isIndex ).join(' ') , splitCommand.slice( isIndex + 1 , splitCommand.length).join(' '));
+        console.log(dataBase);
+        console.log('****end new method2****');
+        return `your ${splitCommand.slice( myIndex + 1 , isIndex ).join(' ')} is added to database.`
     }
 }
 
 let dataBase = [];
 
 console.log(getReply('add clean machine to my todo list.'));
+console.log(dataBase);
+
+console.log(getReply('joHn Doe is My name.'));
 console.log(dataBase);
 
 console.log(getReply('Hi, My name is joHn Doe.'));
