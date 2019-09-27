@@ -59,32 +59,7 @@ function getReply(command) {
             }
         }
     }
-
-    if(splitCommand[0].includes( 'where' ) || splitCommand[0].includes( 'when' )) {
-        // Tobe developed later
-        return 'Sorry. Ihave not developed skills to answer this question yet';
-    }
-
-    if(splitCommand[0] === 'who' || splitCommand[0] === 'which' ) {
-        // Tobe developed later        
-        return 'Sorry. Ihave not developed skills to answer this question yet';
-    }
-
-    if(splitCommand[0] === 'am' || splitCommand[0] === 'is' ) {
-        // Tobe developed later
-        return 'Sorry. Ihave not developed skills to answer this question yet';
-    }
-
-    if(splitCommand[0] === 'are' || splitCommand[0] === 'were' ) {
-        // Tobe developed later
-        return 'Sorry. Ihave not developed skills to answer this question yet';
-    }
-
-    if(splitCommand[0] === 'was' || splitCommand[0] === 'will' ) {
-        // Tobe developed later
-        return 'Sorry. Ihave not developed skills to answer this question yet';
-    }
-
+    
     // Commands. Sentences that start with ADD
     if(splitCommand[0] === 'add' ) {
         for (let i = 0 ; i < addtypes.length ; i++) {
