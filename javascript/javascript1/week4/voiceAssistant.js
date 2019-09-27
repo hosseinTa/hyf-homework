@@ -17,8 +17,8 @@ function firstLetterUpperCase(userName) {
     return userName.slice(0 , 1).toUpperCase() + userName.slice(1 , userName.length);
 }
 
-function isAboutUserName(splitCommand) {
-    if( splitCommand.indexOf( 'name') - splitCommand.indexOf( 'my' ) === 1 ) {
+function isAboutUser(splitCommand) {
+    if( splitCommand.indexOf( 'my') - splitCommand.indexOf( 'is' ) === 1 ) {
         return true;
     } else {
         return false;
@@ -51,7 +51,7 @@ function getReply(command) {
                 return `Tomorrow is ${ week[ 1 + systemDate.getDay() ] }.`
             }
         }
-        if( isAboutUserName( splitCommand ) ) {
+        if( isAboutUser( splitCommand ) ) {
             const userNameIndex = findIndexOf( 'userName' );
             if(userNameIndex === -1) {
                 return `I dont know your name. Maybe you should tell me your name.`
@@ -100,26 +100,27 @@ function getReply(command) {
     // Informative sentences
     const isIndex = splitCommand.indexOf('is');
     const myIndex = splitCommand.indexOf('my');
+    let newId = '';
+    let newValue = '';
     if (isIndex < myIndex) {
         // THE VALUE IS MY ID
-        console.log('****new method****');
-        add(splitCommand.slice( myIndex + 1 , splitCommand.length ).join(' ') , splitCommand.slice(0 , isIndex).join(' ') ) ;
-        console.log(dataBase);
-        console.log('****end new method****');
-        return `your ${splitCommand.slice( myIndex + 1 , splitCommand.length ).join(' ')} is added to database.`
+        newId = splitCommand.slice( myIndex + 1 , splitCommand.length ).join(' ');
+        newValue = splitCommand.slice(0 , isIndex).join(' ');
     } else {
         // MY ID IS VALUE
-        console.log('****new method2****');
-        add(splitCommand.slice( myIndex + 1 , isIndex ).join(' ') , splitCommand.slice( isIndex + 1 , splitCommand.length).join(' '));
-        console.log(dataBase);
-        console.log('****end new method2****');
-        return `your ${splitCommand.slice( myIndex + 1 , isIndex ).join(' ')} is added to database.`
+        newId = splitCommand.slice( myIndex + 1 , isIndex ).join(' ');
+        newValue = splitCommand.slice( isIndex + 1 , splitCommand.length).join(' ');
     }
+    add( newId , newValue );  
+    return `${newValue} is added to database as your ${newId}.`
 }
 
 let dataBase = [];
 
 console.log(getReply('add clean machine to my todo list.'));
+console.log(dataBase);
+
+console.log(getReply('add potato to my shopping list.'));
 console.log(dataBase);
 
 console.log(getReply('joHn Doe is My name.'));
@@ -128,7 +129,7 @@ console.log(dataBase);
 console.log(getReply('Hi, My name is joHn Doe.'));
 console.log(dataBase);
 
-console.log(getReply('Hi pc. My name is Rober. How are you doing.'));
+console.log(getReply('Hi, My name is Rober.'));
 console.log(dataBase);
 
 console.log(getReply('Hi, My name is joHn Doe.'));
