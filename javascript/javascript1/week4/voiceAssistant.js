@@ -117,8 +117,12 @@ function getReply(command) {
         return `Your ${newId} is already registered in database as ${dataBase[findIndexOf(newId)].value}.`
     } else {
         // add it to databaee
-        add( newId , newValue );  
+        add( newId , newValue );
+        if ( newId === 'name' ) {
+            return `Hi ${newValue}. Nice to meet you.`
+        } else {
         return `${newValue} is added to database as your ${newId}.`
+        }
     }
 }
 
