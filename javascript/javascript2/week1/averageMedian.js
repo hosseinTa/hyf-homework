@@ -7,7 +7,7 @@ function average(arrayOfNumbers) {
 }
 
 function median(arrayOfNumbers) {
-    arrayOfNumbers.sort();
+    arrayOfNumbers.sort(function(a, b){return a-b});
     console.log(arrayOfNumbers)
     if (arrayOfNumbers.length % 2 === 0) {
         const v1 = arrayOfNumbers[ arrayOfNumbers.length / 2 - 1];
@@ -20,4 +20,4 @@ function median(arrayOfNumbers) {
 
 console.log(average([55 , 20 , 30 , 10 , 40]));
 
-console.log(median([ 2, 20 , 30 , 10 , 40]));
+console.log(median([ 20 , 31 , 10 , 40]));
