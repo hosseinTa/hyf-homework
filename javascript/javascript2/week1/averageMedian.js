@@ -18,6 +18,29 @@ function median(arrayOfNumbers) {
     }
 }
 
-console.log(average([55 , 20 , 30 , 10 , 40]));
+const housePrices = [300, 350, 130, 4000, 10000, 800, 210];
 
-console.log(median([ 20 , 31 , 10 , 40]));
+const myUL = document.createElement('ul');
+myUL.style.marginLeft = '50px';
+
+document.body.appendChild(myUL);
+
+for (let i = 0 ; housePrices.length ; i++) {
+    const newli = document.createElement('li');
+    // const price = housePrices[i].toString();
+    debugger
+    newli.textContent = 'i.toString()';
+    debugger
+    myUL.appendChild(newli); 
+}
+
+const averageText = document.createElement('p');
+average.textContent = 'average(housePrices).toString()';
+
+
+const medianText = document.createElement('p');
+average.textContent = 'median(housePrices).toString()';
+
+console.log(averageText);
+// document.body.appendChild(averageText);
+// document.body.appendChild(medianText);
