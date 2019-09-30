@@ -1,4 +1,4 @@
-function average(arrayOfNumbers) {
+function calculateAverage(arrayOfNumbers) {
     let sum = 0;
     for (let i =0 ; i < arrayOfNumbers.length ; i++) {
         sum += arrayOfNumbers[i];
@@ -6,7 +6,7 @@ function average(arrayOfNumbers) {
     return sum / arrayOfNumbers.length;
 }
 
-function median(arrayOfNumbers) {
+function calculateMedian(arrayOfNumbers) {
     arrayOfNumbers.sort(function(a, b){return a-b});
     console.log(arrayOfNumbers)
     if (arrayOfNumbers.length % 2 === 0) {
@@ -33,10 +33,10 @@ for (let i = 0 ; i < housePrices.length ; i++) {
 }
 
 const averageText = document.createElement('p');
-averageText.textContent = 'Average Price is : ' + average(housePrices).toString();
+averageText.textContent = 'Average Price is : ' + calculateAverage(housePrices).toString();
 
 const medianText = document.createElement('p');
-medianText.textContent = 'The median of the prices is : ' + median(housePrices).toString();
+medianText.textContent = 'The median of the prices is : ' + calculateMedian(housePrices).toString();
 
 // console.log(averageText);
 document.body.appendChild(averageText);
