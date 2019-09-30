@@ -25,22 +25,19 @@ myUL.style.marginLeft = '50px';
 
 document.body.appendChild(myUL);
 
-for (let i = 0 ; housePrices.length ; i++) {
+for (let i = 0 ; i < housePrices.length ; i++) {
     const newli = document.createElement('li');
-    // const price = housePrices[i].toString();
-    debugger
-    newli.textContent = 'i.toString()';
-    debugger
+    const price = housePrices[i].toString();
+    newli.textContent = price;
     myUL.appendChild(newli); 
 }
 
 const averageText = document.createElement('p');
-average.textContent = 'average(housePrices).toString()';
-
+averageText.textContent = 'Average Price is : ' + average(housePrices).toString();
 
 const medianText = document.createElement('p');
-average.textContent = 'median(housePrices).toString()';
+medianText.textContent = 'The median of the prices is : ' + median(housePrices).toString();
 
-console.log(averageText);
-// document.body.appendChild(averageText);
-// document.body.appendChild(medianText);
+// console.log(averageText);
+document.body.appendChild(averageText);
+document.body.appendChild(medianText);
