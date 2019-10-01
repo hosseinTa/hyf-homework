@@ -1,0 +1,20 @@
+#result {
+    margin: auto;
+    margin-top: 30px;
+    width: 50%;
+    height: 23px;
+    font-family: sans-serif;
+    border: 7px navy solid;
+    text-align: center;
+    /* justify-content: center;
+    align-content: center; */
+    background-color: yellowgreen;
+    font-size: 20px;
+    color : darkslategrey;
+}
+
+
+/* body {
+    align-content: center;
+    justify-content: center;
+} */
