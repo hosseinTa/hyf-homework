@@ -1,5 +1,7 @@
 const mybutton = document.querySelector('button');
 const myOutput = document.getElementById('result');
+const radioClick = document.getElementsByName('triger');
+console.log(radioClick);
 
 mybutton.addEventListener( 'click' , sayHello ) ;
 
@@ -11,4 +13,18 @@ function sayHello(){
     } else {
         myOutput.textContent =  userName + ' - The ' + spritalNames[Math.floor(10*Math.random())];
     }
+}
+
+function switchToClick() {
+    console.log('click');
+}
+
+
+function switchToHover() {
+    console.log('hover');
+}
+
+
+function switchToType() {
+    console.log('type');
 }
