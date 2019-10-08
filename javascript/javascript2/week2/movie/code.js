@@ -26,12 +26,42 @@ moviesCopy.map(function(movies) {
 // 5. Using chaining, first filter the movies
 const ratingsHigherThan6 = movies.filter( movies => movies.rating > 6)
     .map( movies => movies.rating);
-console.log(ratingsHigherThan6);
 
 
 // 6. Count the total number of movies
-console.log(`Number of fillms that includes "Surfer", "Alien" or "Benjamin" is: ${ movies.filter(movies => ( movies.title.includes('Surfer') || 
+console.log(`Number of fillms that includes either "Surfer", "Alien" or "Benjamin" is: ${ movies.filter(movies => ( movies.title.includes('Surfer') || 
 movies.title.includes('Alien') || movies.title.includes('Benjamin'))).length}`)
 
-// 7. Create an array of movies where a word in the title is duplicated.
 
+// 7. Create an array of movies where a word in the title is duplicated.
+const dublicatesMoviesList = movies.filter( function isDuplicated(movies) {
+    const movieTitle = movies.title.toLowerCase();
+    const cleanName = movieTitle.replace(/:|;|\(|\)|-|\.|\'|\*|\!|½/g, '');
+    const titleWords = cleanName.split(' ');
+    //console.log(titleWords);
+    const repeats = titleWords.reduce( function (counter , titleWords) {
+        if(counter.hasOwnProperty(titleWords) ) {
+            counter[titleWords] += 1;
+            if((titleWords === 'the' || titleWords === 'a') || titleWords === 'of') {
+                
+            } 
+            else {counter.duplicated = true;}
+        } else {
+            counter[titleWords] = 1;
+        }
+        return counter;
+    } , {'duplicated' : false} )
+    // console.log(repeats);
+    if(repeats['duplicated'] === true) return true;
+})
+titleOfDublicatesMoviesList = dublicatesMoviesList.map( dublicatesMoviesList => dublicatesMoviesList.title);
+// console.log('titleOfDublicatesMoviesList');
+
+// console.log(titleOfDublicatesMoviesList);
+const myUL = document.createElement('ul');
+titleOfDublicatesMoviesList.forEach(titleOfDublicatesMoviesList => {
+    const myLI = document.createElement('li');
+    myLI.textContent = titleOfDublicatesMoviesList;
+    myUL.appendChild(myLI);
+});
+document.body.appendChild(myUL);
