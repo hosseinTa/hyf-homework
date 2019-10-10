@@ -5,9 +5,9 @@ renderProducts(testProductNames);
 
 
 function renderProducts(products) {
-    const productList = document.querySelector('.products ul')
-    const selecteddetails = ['name' , 'price' , 'rating', 'shipsTo']
-
+    const productPlace = document.getElementById('products');
+    const selecteddetails = ['name' , 'price' , 'rating', 'shipsTo'];
+    const productList = document.createElement('ul');
     for (let index = 0; index < products.length; index++) {
         const NewProduct = document.createElement('li');
         const itemDetails = document.createElement('ul');
@@ -21,4 +21,20 @@ function renderProducts(products) {
         NewProduct.appendChild(itemDetails);  
         productList.appendChild(NewProduct);
     }
+    console.log(productList);
+    console.log(productPlace);
+    productPlace.appendChild(productList);
+}
+
+const search = document.querySelector('input');
+search.addEventListener('input' , returnSearch);
+
+function returnSearch() {
+    const search = document.querySelector('input');
+    const selectedProducts = testProductNames.filter( products => products.name.toLowerCase().includes(search.value.toLowerCase()));
+    const productListUL = document.querySelector('.products ul')
+    productListUL.remove();
+    const productList = document.getElementById('products')
+    const myUL = document.createElement('ul');
+    renderProducts(selectedProducts);
 }
