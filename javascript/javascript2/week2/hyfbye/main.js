@@ -34,7 +34,5 @@ function returnSearch() {
     const selectedProducts = testProductNames.filter( products => products.name.toLowerCase().includes(search.value.toLowerCase()));
     const productListUL = document.querySelector('.products ul')
     productListUL.remove();
-    const productList = document.getElementById('products')
-    const myUL = document.createElement('ul');
     renderProducts(selectedProducts);
 }
