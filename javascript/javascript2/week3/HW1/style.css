@@ -1,0 +1,15 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    width: 60vw;
+    height: 600px;
+    text-align: center;
+    align-items: center;
+    border:  2px dashed black;
+    position: absolute;
+}
+
+button {
+    margin: auto;
+}
