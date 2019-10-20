@@ -118,3 +118,4 @@ function logFunnyJoke () {
 
 jokeCreator(true , logFunnyJoke , logBadJoke);
 jokeCreator(false , logFunnyJoke , logBadJoke);
+
