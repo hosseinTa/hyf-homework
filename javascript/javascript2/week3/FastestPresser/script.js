@@ -5,11 +5,21 @@ let countL = 0;
 const result = document.getElementById('log')
 const startButton = document.getElementById('start');
 const gameTime = document.querySelector('input[type=text]');
+gameTime.focus();
 
-const scoreBoardS = document.getElementById('scoreS')
-const scoreBoardL = document.getElementById('scoreL')
+const player = [document.getElementById('scoreS') , document.getElementById('scoreL') ];
+console.log(player[0]);
+console.log(player[1]);
 
 startButton.addEventListener('click' , startGame)
+
+gameTime.addEventListener("keypress", checkEnter);
+function checkEnter(e) {
+  if(e.key === "Enter") {
+    startButton.focus();
+    startGame();
+  } 
+}
 
 function startGame() {
     countS = 0;
@@ -17,21 +27,26 @@ function startGame() {
     document.addEventListener('keypress', logKey);
     const time = gameTime.value; 
     setTimeout( GameOver , time * 1000 );
-    scoreBoardS.textContent = `Press S`;
-    scoreBoardL.textContent = `Press L`;
-    document.getElementById('scoreS').style.background = 'none';
-    document.getElementById('scoreL').style.background = 'none';
+    player[0].textContent = `Press S`;
+    player[1].textContent = `Press L`;
+    player[0].style.background = 'none';
+    player[1].style.background = 'none';
 }
 
 function GameOver() {
   document.removeEventListener('keypress', logKey);
   if(countS > countL) {
-    result.textContent = 'S WIN' 
-    document.getElementById('scoreS').style.background = 'red';
+    giveGiftToWinner(0)
+    result.textContent = `player ${0 + 1} win.`;
   }
   if(countS < countL) {
-    result.textContent = 'L WIN';
-    document.getElementById('scoreL').style.background = 'red';
+    giveGiftToWinner(1)
+    result.textContent = `player ${1 + 1} win.`;
+  }
+  if(countS === countL) {
+    result.textContent = `No player win.`;
+    giveGiftToWinner(0)
+    giveGiftToWinner(1)
   }
 }
 
@@ -39,12 +54,18 @@ function logKey(e) {
   console.log(e)
   if(e.key.toLowerCase() === 's') {
     countS += 1;
-    scoreBoardS.textContent = `Press S ${countS}`;
+    player[0].textContent = `Press 1 ${countS}`;
   }
   if(e.key.toLowerCase() === 'l') {
     countL += 1;
-    scoreBoardL.textContent = `Press L ${countL}`;
+    player[1].textContent = `Press 2 ${countL}`;
   }
   console.log(`l = ${countL}`)
   console.log(`s = ${countS}`)
+}
+
+function giveGiftToWinner(winner) {
+  player[winner].style.backgroundImage = 'url("https://media.giphy.com/media/3oEhmXZk3262W6lPC8/giphy.gif")';
+  player[winner].style.backgroundSize = '35vh';
+  player[winner].style.backgroundRepeat = 'no-repeat'
 }
