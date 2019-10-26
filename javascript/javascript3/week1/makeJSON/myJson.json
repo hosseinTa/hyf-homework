@@ -1,0 +1,50 @@
+[
+    [
+        {
+            "name": "Sara",
+            "lastName": "Thompson",
+            "age": 32,
+            "languages": [
+                "JS",
+                "HTML",
+                "Python"
+            ],
+            "employer": "Code one A/S",
+            "friens": [ "Jasmin" , "Robert" , "Thomas" , "Sofie"]
+        },
+        {
+            "name": "sofie",
+            "lastName": "Hamilton",
+            "age": 29,
+            "languages": [
+                "JS",
+                "Python"
+            ],
+            "employer": "Petro Nord A/S",
+            "friends" : [ "Sara" , "Thomas" ]
+        },
+        {
+            "name": "James",
+            "lastName": "Moller",
+            "age": 33,
+            "languages": [
+                "JS",
+                "HTML"
+            ],
+            "employer": "My App IVS"
+        },
+        {
+            "name": "Robert",
+            "lastName": "Jacobsen",
+            "age": 32,
+            "languages": [
+                "HTML",
+                "Python"
+            ],
+            "employer": "Spar Dan"
+        }
+    ],
+    {
+        "g": 45
+    }
+]

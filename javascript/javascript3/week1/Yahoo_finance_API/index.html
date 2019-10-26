@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p> <strong>World Trading Data </strong> is an <strong>API</strong> for catching the real time price of shares at stock exchange</p>
+    <p> This API needs a paid API-Key but for first 250 request, one can have a free API-Key.</p>
+    <p> It returns a <strong>Promise</strong>. It means that to get the value, the developer should use async/await function. </p>
+
+    <p>To test the API, you need share symbol. For example, the symbol of <strong> Novo Nordisk </strong> is <strong>NVO</strong>.</p>
+
+    <p> To get the symbol of shares, you can <a href="https://www.nyse.com/listings_directory/stock" target="_blank">click here</a> </p>
+    <input type="text" id = 'symbol'>
+    <button id = 'search'>Search</button>
+    <script src="received.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
