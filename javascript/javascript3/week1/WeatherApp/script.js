@@ -41,33 +41,36 @@ async function fetchURL(address) {
 }
 
 function exportData(response) {
+    const weatherDetail = document.getElementById('demo');
+    weatherDetail.innerHTML = '';
+
     const city = document.createElement('p');
     city.textContent = `City : ${response.name}`
-    document.body.appendChild(city)
+    weatherDetail.appendChild(city)
 
     const temperature = document.createElement('p');
     temperature.textContent = `Temperature : ${response.main.temp - 273}`
-    document.body.appendChild(temperature)
+    weatherDetail.appendChild(temperature)
 
     const weatherIcon = document.createElement('img');
     weatherIcon.src = 'http://openweathermap.org/img/wn/' + response.weather[0].icon + '@2x.png'
-    document.body.appendChild(weatherIcon);
+    weatherDetail.appendChild(weatherIcon);
 
     const windSpeed = document.createElement('p');
     windSpeed.textContent = `Wind speed : ${response.wind.speed}`;
-    document.body.appendChild(windSpeed);
+    weatherDetail.appendChild(windSpeed);
 
     const cloudPercent = document.createElement('p');
     cloudPercent.textContent = `cloud percent : ${response.clouds.all}%`;
-    document.body.appendChild(cloudPercent);
+    weatherDetail.appendChild(cloudPercent);
 
     const sunRise = document.createElement('p');
     sunRise.textContent = `Sunrise : ${unix2time(response.sys.sunrise)}`;
-    document.body.appendChild(sunRise);
+    weatherDetail.appendChild(sunRise);
 
     const sunSet = document.createElement('p');
     sunSet.textContent = `Sunset : ${unix2time(response.sys.sunset)}`;
-    document.body.appendChild(sunSet);
+    weatherDetail.appendChild(sunSet);
 }
 
 function unix2time(unix_timestamp) {
