@@ -55,6 +55,9 @@ function getRandomColor() {
     return color;
 }
 
+console.log(document.documentElement.scrollHeight);
+console.log(document.documentElement.scrollWidth);
+
 const circle1 = new Circle ( 290 , 100 , 20 , 0 , 2*Math.PI , 'blue' , 'red' , 5)
 setTimeout(circle1.drawCircle() , 5*1000)
 
@@ -67,29 +70,34 @@ let oldMouseY = 0;
 let mouseX = 0;
 let mouseY = 0;  
 const myDocument = document.body;
-document.addEventListener('mousemove' , handler);
+document.addEventListener('mousemove' , mouseLocation);
 
-function handler(e) {
-    // console.log('e')
-
+function mouseLocation(e) {
+    //get mouse location
     mouseX = e.pageX;
     mouseY = e.pageY;
-
-    // console.log(pageX, pageY);
 }
 
 function drawRandomCircle() {
     if(oldMouseX !== mouseX && oldMouseY !== mouseY) {
-        const newCircle = new Circle(mouseX , mouseY , 5 + Math.floor(Math.random()*45) , 0 , 2*
+        //If mouse has moved from its old position
+        const windowHeight = document.documentElement.scrollHeight;
+        const windowWidth = document.documentElement.scrollWidth;
+        //compensating the difference in the size of the Canvas and the document
+        const CircleCenterX = mouseX - Math.floor(0.5 * (windowWidth - 800));
+        const CircleCenterY = mouseY - Math.floor(0.5 * (windowHeight - 600));
+
+        const newCircle = new Circle(CircleCenterX , CircleCenterY , 5 + Math.floor(Math.random()*45) , 0 , 2*
             Math.PI , getRandomColor(),getRandomColor() , Math.floor(Math.random()*10))
-        console.log(newCircle);
         newCircle.drawCircle()
+        //Updating the mouse location
         oldMouseX = mouseX;
         oldMouseY = mouseY;
     }else {
+        //If mouse has not moved
+        //draw a circle with random location and dimwension and color
         const newCircle = new Circle(Math.floor(Math.random()*800) , Math.floor(Math.random()*600) , 5 +
             Math.floor(Math.random()*45) , 0 , 2*Math.PI , getRandomColor(),getRandomColor() , Math.floor(Math.random()*10))
-        // console.log(newCircle);
         newCircle.drawCircle()
     }
 }
