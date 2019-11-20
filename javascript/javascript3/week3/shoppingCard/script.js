@@ -60,7 +60,7 @@ class ShoppingCart {
     }
 
     getUser() {
-        // Implement functionality here
+        return fetch('https://jsonplaceholder.typicode.com/users/1');
     }
 }
 
@@ -102,3 +102,5 @@ myShoppingCart.getTotal()
 myShoppingCart.renderProducts();
 
 myShoppingCart.searchProduct('ilk')
+
+console.log(myShoppingCart.getUser())
