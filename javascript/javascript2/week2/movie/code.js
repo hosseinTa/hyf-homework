@@ -12,8 +12,7 @@ console.log(`Number of movies made between 1980-1989 is equal to ${movies.filter
     (movies.year <=1989 && movies.year >=1980)).length}`);
 
 // 4. Create a new array that has an extra key called tag.
-const moviesCopy = movies;
-moviesCopy.map(function(movies) {
+const taggledMovies = movies.map(function(movies) {
     if(movies.rating >= 7) {
         movies.tag = 'Good';
     } else if(movies.rating < 4) {
