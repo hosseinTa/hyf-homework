@@ -34,3 +34,4 @@ WHERE (id = 37);
 -- 6. Delete task with this attribute: taskID
 DELETE FROM task
 WHERE id = 37;
+
