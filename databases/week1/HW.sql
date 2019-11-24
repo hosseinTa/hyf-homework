@@ -1,20 +1,20 @@
 -- 1. Find out how many tasks are in the task table
-SELECT COUNT(*) FROM hyf_class.task;
+SELECT COUNT(*) FROM task;
 
 -- 2. Find out how many tasks in the task table do not have a valid due date
-SELECT COUNT(*) FROM hyf_class.task WHERE due_date IS NULL;
+SELECT COUNT(*) FROM task WHERE due_date IS NULL;
 
 -- 3. Find all the tasks that are marked as done
-SELECT title , s.name AS Status
-FROM hyf_class.task t
-JOIN hyf_class.status s
+SELECT title , s.name AS status
+FROM task t
+JOIN status s
 ON s.id = t.status_id
 WHERE s.name = "Done";
 
 -- 4. Find all the tasks that are not marked as done
-SELECT title , s.name AS Status
-FROM hyf_class.task t
-JOIN hyf_class.status s
+SELECT title , s.name AS status
+FROM task t
+JOIN status s
 ON s.id = t.status_id
 WHERE s.name != "Done";
 
@@ -29,7 +29,7 @@ LIMIT 1;
 
 -- 7. Get the title and due date of all tasks where the title or description contains database
 SELECT task.title, task.description, task.due_date
-FROM hyf_class.task
+FROM task
 WHERE title LIKE "%database%" OR description LIKE "%database%";
 
 -- 8. Get the title and status (as text) of all tasks
@@ -39,16 +39,16 @@ INNER JOIN status s
 ON t.status_id = s.id;
 
 -- 9. Get the name of each status, along with a count of how many tasks have that status
-SELECT COUNT(*) AS Count, s.name
+SELECT COUNT(*) AS 'Count', s.name
 FROM task t
 INNER JOIN status s
 ON t.status_id = s.id
 GROUP BY s.name;
 
 -- 10. Get the names of all statuses, sorted by the status with most tasks first
-SELECT s.name , COUNT(*) AS Count
+SELECT s.name , COUNT(*) AS count
 FROM task t
 INNER JOIN status s
 ON t.status_id = s.id
 GROUP BY s.name
-ORDER BY Count DESC;
+ORDER BY count DESC;
