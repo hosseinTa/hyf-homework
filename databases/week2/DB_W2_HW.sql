@@ -1,5 +1,5 @@
 -- 1. Add a task with the these attributes: title, description, created, updated, dueDate, statusID, userID
-INSERT INTO hyf_class.task 
+INSERT INTO task 
 (title, description, created, updated, due_Date, status_id, user_id)
 VALUES 
 ('Make a new task' ,
