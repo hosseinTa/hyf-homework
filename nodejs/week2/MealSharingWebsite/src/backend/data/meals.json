@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Indian food in the winter",
+      "maxNumberOfGuests": 5,
+      "description": "Eat indian food in winter to get warm.",
+      "createdAt": "201812081534",
+      "price": 67
+    },
+    {
+        "id": 2,
+        "title": "Indian food in the spring",
+        "maxNumberOfGuests": 25,
+        "description": "A healthy dish of fresh ingreadiants.",
+        "createdAt": "201910091834",
+        "price": 80
+    },
+    {
+        "id": 3,
+        "title": "Indian food in the fall",
+        "maxNumberOfGuests": 35,
+        "description": "A nice night out eating delicious indian food",
+        "createdAt": "202012161034",
+        "price": 85
+    },
+    {
+        "id": 4,
+        "title": "Red food in a blue dish",
+        "maxNumberOfGuests": 12,
+        "description": "Do you know what can be a red food",
+        "createdAt": "201712011131",
+        "price": 75
+    },
+    {
+        "id": 5,
+        "title": "Kids green food",
+        "maxNumberOfGuests": 3,
+        "description": "Why the hell should one have a kid?",
+        "createdAt": "201711171737",
+        "price": 45
+    }
+]
