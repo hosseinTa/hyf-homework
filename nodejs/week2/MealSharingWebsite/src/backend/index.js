@@ -25,10 +25,10 @@ app.use("/reservation" , reservationRoute);
 app.use("/reservations" , reservationsRoute);
 app.use("/reviews" , reviewsRoute);
 
-app.get("/reservations/:id" , reservationIdRoute);
+app.get("/reservationsid/:id" , reservationIdRoute);
 app.get("/meals/:id" , mealIdRoute);
 app.get("/reviews/:id" , reviewsIdRoute);
 app.get("/maxPriceRoute/:price" , maxPriceRoute);
 app.get("/api/meals?" , titleContainsRoute);
 
-app.listen(port , ()=> console.log('Server is running'));
+app.listen(port , ()=> console.log(`Server is running on port ${port}`));
