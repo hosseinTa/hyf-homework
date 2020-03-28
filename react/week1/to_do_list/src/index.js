@@ -22,18 +22,24 @@ function Header(props) {
   return <h1>My ToDo List</h1>;
 }
 
+function strongText(theWord) {
+  return <strong>{theWord}</strong>;
+}
+
+function paragraph(keyValue, paragraphContent) {
+  return <p key={keyValue}>{paragraphContent}</p>;
+}
+
 function ListMaker(props) {
   console.log(props);
   const listoftask = props.mytasks.map((task, index) => {
-    return (
-      <p key={index}>
+    return paragraph(
+      index,
+      <font color={task.color}>
         {" "}
-        <font color={task.color}>
-          {" "}
-          The task named "{task.title}" should be finished before{" "}
-          <strong>"{task.dealline}"</strong>
-        </font>{" "}
-      </p>
+        The task named "{strongText(task.title)}" should be finished before{" "}
+        {strongText(task.dealline)}{" "}
+      </font>
     );
   });
   console.log(listoftask);
