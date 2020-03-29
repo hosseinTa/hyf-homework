@@ -3,6 +3,17 @@ const app = express();
 const router = express.Router();
 const path = require("path");
 
+const database = require("./database");
+const connection = database;
+
+connection.query("SELECT * FROM meal WHERE id = 4;", (error, results) => {
+  if (error) {
+    console.log(error);
+    return;
+  }
+  console.log(results[0].title);
+});
+
 const mealsRouter = require("./api/meals");
 
 const port = process.env.PORT || 3000;

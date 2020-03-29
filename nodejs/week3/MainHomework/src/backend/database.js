@@ -25,6 +25,8 @@ pool.getConnection((err, connection) => {
     if (err.code === "ECONNREFUSED") {
       console.error("Database connection was refused.");
     }
+  } else {
+    console.log("Your connection to the server successful.");
   }
   if (connection) connection.release();
   return;
