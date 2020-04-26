@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0%;
+}
+
+#headerContainer {
+  margin-left:10%;
+}
+
+
+#counterCointainer {
+  margin-left: 10%;
+}
+
+#taskList {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  margin-left:10%
+}
+
+.taskName {
+  width: 500px;
+  margin-left: 50px;
+}
+
+.taskLine {
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: solid black;
+}
+
+button {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.react-date-picker__button {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.react-date-picker--enabled {
+  padding-top: 0px;
+  height: 33px;
+  box-sizing:border-box;
+  border: solid 1px black;
+  margin-left: 5%;
+}
+
+#newTaskBox {
+  height: 33px;
+  box-sizing:border-box;
+  border: solid 1px black;
+}
+
+.NewTascContainer {
+  display: flex;
+  margin-left: 0%;
+}
