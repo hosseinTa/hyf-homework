@@ -26,5 +26,12 @@
         "content": "Waste of money",
         "mealId": 3,
         "createdAt": 34568896
+    },
+    {
+        "id": 5,
+        "numberOfStars": 1,
+        "content": "Never go back to that restaurant",
+        "mealId": 2,
+        "createdAt": 34568896
     }
 ]

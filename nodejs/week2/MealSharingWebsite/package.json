@@ -1,0 +1,23 @@
+{
+  "name": "MealSharingWebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test spggtgecified\" && exit 1",
+    "start": "node ./src/backend/index.js",
+    "deve": "nodemon ./src/backend/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "json": "^9.0.6",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
