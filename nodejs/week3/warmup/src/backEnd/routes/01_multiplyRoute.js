@@ -2,7 +2,7 @@ const express = require("express");
 const app = express.Router();
 
 app.get("/" , (req , res)=>{
-    console.log('Calculator is running');
+    console.log('Calculator multiplication is running');
     // const firsParam = req.param(firstNumber);
     const firstNumber  = parseInt(req.query.firstNumber);
     const secondNumber = parseInt(req.query.secondNumber);

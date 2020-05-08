@@ -35,12 +35,14 @@ app.use("/api", router);
 // For week4 no need to look into this!
 // Ensures that the client router works on reload aswell.
 // Sends all requests back to index.html where the routing lib takes over
-app.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./../frontend/index.html"), function(err) {
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./../frontend/index.html"), function (err) {
     if (err) {
       res.status(500).send(err);
     }
   });
 });
+
+console.log(port)
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`));

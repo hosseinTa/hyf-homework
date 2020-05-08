@@ -16,17 +16,18 @@ app.use(function (req, res, next) {
 })
 
 app.use(express.json());
-app.get("/" , (req , res)=>{
+app.get("/", (req, res) => {
     console.log('root is called');
     res.send('welcome to the root');
 })
 
-app.use("/calculator/multiply" , multiplyRoute);
-app.use("/calculator/addition" , additionRoute);
-app.use("/calculator/subtraction" , subtractionRoute);
-app.use("/calculator/devision" , devisionRoute);
+app.use("/calculator/multiply", multiplyRoute);
+app.use("/calculator/addition", additionRoute);
+app.use("/calculator/subtraction", subtractionRoute);
+app.use("/calculator/devision", devisionRoute);
 
-app.use("/calculate" , calculatorRoute);
+app.use("/alaki", calculatorRoute);
 
 const PORT = process.env.PORT;
-app.listen(PORT , ()=> console.log(`Server is runnnnnnning on port ${PORT}. Welcome`));
+
+app.listen(PORT, () => console.log(`Server is runnnnnnning on port ${PORT}. Welcome`));
