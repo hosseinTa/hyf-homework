@@ -72,33 +72,26 @@ class Counter extends React.Component {
 }
 
 class TodoList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      toDoListData: this.props.toDoListData
-    }
-  }
+  state = { toDoListData: this.props.taskList }
 
-  addRandomTask(toDoListData) {
-    toDoListData.push({
-      id: toDoListData.length,
-      description: "Random Text",
-      color: 'navygrey',
-      deadline: "2020-12-29",
-      done: false,
-      visibility: true
-    });
-    this.setState({ toDoListData: this.props.toDoListData })
+  addRandomTask = () => {
+    this.setState({
+      taskList: this.state.toDoListData.push({
+        id: this.state.toDoListData.length,
+        description: "Random Text",
+        color: 'navygrey',
+        deadline: "2020-12-29",
+        done: false,
+        visibility: true
+      })
+    })
   }
 
   render() {
-    let toDoListJSXarray = [];
-    for (let i = 0; i < this.props.taskList.length; i++) {
-      toDoListJSXarray.push(<ToDoTask task={this.props.taskList[i]} />)
-    }
+    let toDoListJSXarray = this.props.taskList.map(task => <ToDoTask task={task} />)
     return (
       <div>
-        <button onClick={e => this.addRandomTask(this.props.taskList)}> Add a Task </button>
+        <button onClick={this.addRandomTask}> Add a Task </button>
         {toDoListJSXarray}
         <br ></br>
       </div>
