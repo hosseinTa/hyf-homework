@@ -14,7 +14,8 @@ connection.query("SELECT * FROM meal WHERE id = 4;", (error, results) => {
   console.log(results[0].title);
 });
 
-const mealsRouter = require("./api/meals");
+const getMealsRouter = require("./api/getMeals");
+const postMealsRouter = require("./api/postMeals");
 
 const port = process.env.PORT || 3000;
 
@@ -28,7 +29,8 @@ app.use(express.urlencoded({ extended: true }));
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
-router.use("/meals", mealsRouter);
+router.use("/meals", getMealsRouter);
+router.use("/meals", postMealsRouter);
 
 app.use("/api", router);
 
@@ -42,7 +44,5 @@ app.get("/*", function (req, res) {
     }
   });
 });
-
-console.log(port)
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`));
