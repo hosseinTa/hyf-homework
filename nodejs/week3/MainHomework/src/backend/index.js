@@ -16,6 +16,8 @@ connection.query("SELECT * FROM meal WHERE id = 4;", (error, results) => {
 
 const getMealsRouter = require("./api/getMeals");
 const postMealsRouter = require("./api/postMeals");
+const postMealsRouterBody = require("./api/postMealsBody");
+const mealByID = require("./api/mealByID");
 
 const port = process.env.PORT || 3000;
 
@@ -31,6 +33,10 @@ app.use(express.json());
 
 router.use("/meals", getMealsRouter);
 router.use("/meals", postMealsRouter);
+router.use("/mealsbody", postMealsRouterBody);
+router.use("/meals/:id", mealByID ) ; //(req, res) => res.send(req.params));
+
+
 
 app.use("/api", router);
 

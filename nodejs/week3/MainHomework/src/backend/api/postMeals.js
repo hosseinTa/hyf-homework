@@ -10,6 +10,13 @@ router.post("/", (request, response) => {
   console.log(request.query);
 
   const mealtitle = request.query.mealtitle;
+  const description = request.query.description;
+  const location = request.query.location;
+  const event_time = request.query.event_time;
+  const max_reservation = request.query.max_reservation;
+  const price = request.query.price;
+  const created_date = request.query.created_date;
+
   const queryText = `INSERT INTO meal (
       title,
       description,
@@ -19,14 +26,15 @@ router.post("/", (request, response) => {
       price,
       created_date)
     Values (
-      ${mealtitle},
-      'vv',
-      'gg',
-      '2019-12-13 15:00:00',
-      5,
-      10,
-      '2019-11-30')`
+      '${mealtitle}',
+      '${description}',
+      '${location}',
+      '${event_time}',
+      '${max_reservation}',
+      '${price}',
+      '${created_date}')`
 
+  console.log(queryText);
   pool.query(queryText, function (error, results, fields) {
     if (error) {
       // console.log('error in getting data from Database in /api/postMeals.js')
