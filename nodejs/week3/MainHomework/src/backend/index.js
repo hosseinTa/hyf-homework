@@ -3,21 +3,20 @@ const app = express();
 const router = express.Router();
 const path = require("path");
 
-const database = require("./database");
-const connection = database;
 
-connection.query("SELECT * FROM meal WHERE id = 4;", (error, results) => {
-  if (error) {
-    console.log(error);
-    return;
-  }
-  console.log(results[0].title);
-});
+const getMealsRouter = require("./api/meal_01_getMeals");
+const postMealsByQueryRouter = require("./api/meal_02_postMealsByQuery");
+const postMealsRouter = require("./api/meal_03_postMeals");
+const mealByID = require("./api/meal_04_mealByID");
+const updateMealByID = require("./api/meal_05_updateMealByID");
+const deleteMeal = require("./api/meal_06_deleteMeal");
 
-const getMealsRouter = require("./api/getMeals");
-const postMealsRouter = require("./api/postMeals");
-const postMealsRouterBody = require("./api/postMealsBody");
-const mealByID = require("./api/mealByID");
+
+const getReservationsRouter = require("./api/reservations_01_getreservations");
+const postReservationRouter = require("./api/reservations_02_postReservation");
+const reservationByIDRouter = require("./api/reservations_03_reservationByID");
+const updatereservationsByIDRouter = require("./api/reservations_04_updatereservationByID");
+const deleteReservationsRouter = require("./api/reservations_05_deletereservations");
 
 const port = process.env.PORT || 3000;
 
@@ -31,12 +30,18 @@ app.use(express.urlencoded({ extended: true }));
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
-router.use("/meals", getMealsRouter);
+router.use("/meals/", getMealsRouter);
+router.use("/mealsByQuery", postMealsByQueryRouter);
 router.use("/meals", postMealsRouter);
-router.use("/mealsbody", postMealsRouterBody);
-router.use("/meals/:id", mealByID ) ; //(req, res) => res.send(req.params));
+router.use("/meals/:id", mealByID ) ;
+router.use("/meals/:id", updateMealByID ) ;
+router.use("/meals/:id", deleteMeal ) ;
 
-
+router.use("/reservations/", getReservationsRouter);
+router.use("/reservations/", postReservationRouter);
+router.use("/reservations/:id", reservationByIDRouter);
+router.use("/reservations/:id", updatereservationsByIDRouter ) ;
+router.use("/reservations/:id", deleteReservationsRouter ) ;
 
 app.use("/api", router);
 

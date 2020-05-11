@@ -11,7 +11,7 @@ router.get("/", (request, response) => {
       response.send(error)
       return;
     }
-
+    if(results.length == 0 ) response.send("Meal with such ID doesn't exist.")
     response.send(results[0])
   });
 });

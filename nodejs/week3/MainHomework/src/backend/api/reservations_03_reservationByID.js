@@ -3,15 +3,15 @@ const app = express();
 const router = express.Router({ mergeParams: true });
 const pool = require("../database");
 
-router.put("/", (request, response) => {
+router.get("/", (request, response) => {
 
-  pool.query(`SELECT * FROM meal WHERE id = ${request.params.id}`, function (error, results, fields) {
+  pool.query(`SELECT * FROM reservation WHERE id = ${request.params.id}`, function (error, results, fields) {
     if (error) {
 
       response.send(error)
       return;
     }
-
+    if(results.length == 0 ) response.send("Reservation with such ID doesn't exist.")
     response.send(results[0])
   });
 });
